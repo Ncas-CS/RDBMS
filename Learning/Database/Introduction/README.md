@@ -145,3 +145,46 @@ Constraints can be column level or table level. Column level constraints apply t
 * CHECK - Ensures that the values in a column satisfies a specific condition
 * DEFAULT - Sets a default value for a column if no value is specified
 * CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+### Types of Functional dependencies in DBMS:
+A functional dependency is a constraint that specifies the relationship between two sets of attributes where one set can accurately determine the value of other sets. It is denoted as X → Y, where X is a set of attributes that is capable of determining the value of Y. 
+
+|R.No|Name|Dept Name|Dept Building|
+|---|---|---|---|
+|43|name1|CO|A4|
+|44|name2|IT|A3|
+|45|name3|CO|A4|
+|46|name4|ME|B2|
+
+From the above table we can conclude some valid functional dependencies:
+
+*roll_no → { name, dept_name, dept_building },→  Here, roll_no can determine values of fields name, dept_name and dept_building, hence a valid Functional dependency
+*roll_no → dept_name , Since, roll_no can determine whole set of {name, dept_name, dept_building}, it can determine its subset dept_name also.
+*dept_name → dept_building ,  Dept_name can identify the dept_building accurately, since departments with different dept_name will also have a different dept_building
+*More valid functional dependencies: roll_no → name, {roll_no, name} ⇢ {dept_name, dept_building}, etc.
+
+Here are some invalid functional dependencies:
+
+*name → dept_name   Students with the same name can have different dept_name, hence this is not a valid functional dependency.
+*dept_building → dept_name    There can be multiple departments in the same building, For example, in the above table departments ME and EC are in the same building B2, hence dept_building → dept_name is an invalid functional dependency.
+*More invalid functional dependencies: name → roll_no, {name, dept_name} → roll_no, dept_building → roll_no, etc.
+
+### Types of Functional dependencies in DBMS:
+
+### 1.Trivial functional dependency
+In Trivial Functional Dependency, a dependent is always a subset of the determinant.
+i.e. If X → Y and Y is the subset of X, then it is called trivial functional dependency.
+
+### 2. Non-trivial Functional Dependency
+In Non-trivial functional dependency, the dependent is strictly not a subset of the determinant.
+i.e. If X → Y and Y is not a subset of X, then it is called Non-trivial functional dependency.
+
+### 3. Multivalued Functional Dependency
+In Multivalued functional dependency, entities of the dependent set are not dependent on each other.
+i.e. If a → {b, c} and there exists no functional dependency between b and c, then it is called a multivalued functional dependency.
+
+### 4. Transitive Functional Dependency
+In transitive functional dependency, dependent is indirectly dependent on determinant.
+i.e. If a → b & b → c, then according to axiom of transitivity, a → c. This is a transitive functional dependency  
+
+
