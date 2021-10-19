@@ -31,7 +31,79 @@ CREATE TABLE students(
 
 ------------------------------------------------------------
 
--- Cloning table
+-- Select
+SELECT * FROM table_name;
+
+-- Syntax:
+-- SELECT var_name  FROM table_name
+
+------------------------------------------------------------
+
+-- Select distinct
+
+SELECT DISTINCT name FROM students;
+
+-- Syntax:
+-- SELECT DISTINCT var_name FROM table_name
+
+------------------------------------------------------------
+
+-- Where
+SELECT * FROM students WHERE sex='M';
+
+-- Syntax:
+-- SELECT * FROM var_name WHERE condition;
+
+------------------------------------------------------------
+
+-- Conditional operators
+SELECT * FROM students WHERE Age=18 AND Sex='M';
+
+-- Syntax:
+-- SELECT * FROM var_name WHERE condition operator condition ....;
+-- Operators: OR AND NOT
+
+------------------------------------------------------------
+
+-- Insert Rows
+INSERT INTO students (student_id, name, age, sex) 
+VALUES (199, 'Lord El-Melloi II', 18, 'M');
+
+-- Syntax:
+-- INSERT INTO var_name (var_name,....) VALUES ( value,.....);
+
+------------------------------------------------------------
+
+-- NULL values
+SELECT name, age, sex
+FROM students
+WHERE age IS NULL;
+
+SELECT name, age, sex
+FROM students
+WHERE age IS NOT NULL;
+
+-- Syntax:
+-- SELECT var_name,... FROM table_name WHERE var_name IS condition
+
+------------------------------------------------------------
+
+-- Update table
+UPDATE students
+SET name = 'john wick', age= 20
+WHERE student_id = 189;
+
+------------------------------------------------------------
+
+-- Delete column / variable
+DELETE FROM students WHERE name='alfred nobel';
+
+-- Syntax:
+-- DELETE FROM var_name WHERE condition;
+
+------------------------------------------------------------
+
+-- Backup table
 
 CREATE TABLE students_backup AS SELECT student_id, name, sex FROM students;
 
@@ -111,7 +183,7 @@ ALTER TABLE students ADD gpa DECIMAL(3,2);
 
 ------------------------------------------------------------
 
--- Delere columns
+-- Delete columns
 ALTER TABLE students DROP COLUMN gpa  
 
 -- Syntax:
@@ -175,6 +247,25 @@ CREATE TABLE students(
     sex VARCHAR(1) NOTNULL,
     phone VARCHAR(10) NOTNULL UNIQUE
 
+);
+
+-- PRIMARY KEY
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
+);
+
+
+-- FOREIGN KEY
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
 );
 
 
