@@ -74,6 +74,75 @@ Implementation Specific.
 * Any non-relational database falls under this category, so there's no set language standard.
 * Most NRDBMS will implement their own language for performing CRUD and administrative operations on the database.
 
+## Relational database model
+* The need for data is always present.
+* The computer age, the need to represent data in an easy-to-understand, logical form has led to many different models, such as the relational model, the hierarchical model, the network model, and the object model.
+* Because of its simplicity in design and ease in retrieval of data, the relational database model has been very popular, especially in the personal computer environment.
+* E. F. Codd developed the relational database model in 1970. The model is based on mathematical set theory, and it uses a relation as the building block of the database.
+
+## Integrity Rules
+* In any database managed by an RDBMS, it is very important that the data in the underlying tables be consistent. If consistency is compromised the data are not usable.
+* This need led the database field to formulate two integrity rules:
+* Entity integrity
+* Referential integrity
+
+## Theoretical Relational Languages
+* E.F.Codd suggested two theoretical relational languages to use with the relational model:
+* Relational algebra:
+* Relational algebra is a procedural language, because the user accomplishes desired results by using a set of operations in a sequence.The nine operations used by relational algebra are:
+1.Union.
+2.Intersection.
+3.Difference.
+4.Projection.
+5.Selection.
+6.Product.
+7.Assignment.
+8.Join.
+9.Division.
+* Relational calculus:
+* Relational calculus is non procedural language.The programs specifies the data requirement and the system generates the operations needed to procedure a table with the required data.
+* Result= (column list):Expression
+
+## Database Design: Data Modeling and Normalization
+### Data Modeling:
+* Databases are complex, and data modeling is a tool to represent the various components and their relation-ships.The entity-relationship (E-R) model is a very popular modeling tool among many such tools available today. Many tools are available for data modeling with E-R.
+* The E-R model uses E-R diagrams (ERD) for graphical representation of the database components.
+* An entity (or an entity set) is represented by a rectangle.
+* The name of the entity (set) is written within the rectangle.
+* Some tools prefer to use uppercase letters only for entities. The name of an entity set is a singular noun. For example, EMPLOYEE, CUSTOMER, and DEPARTMENT are singular entity set names.
+* A line represents relationship between the two entities.
+* The name of the relationship is an active verb in lowercase letters.For example, works; manages, and employs are active verbs. Passive verbs can be used, but active verbs are preferable.
+* The types of relationships (1:1, 1:M, and M:N) between entities are called connectivity or multiplicity.
+* The relationship between two entities can be given using the lower and upper limits. This information is called the cardinality.
+* Optional relationship : It is possible to have an entity that is not related to another entity at all times. The relationship becomes optional.
+* Composite entity or Associative entity : The decomposition from M:N to 1:M involves third entity known as composite entity or an associative entity.
+* Weak entities : In a database, these are entities that can exist by themselves such entities are known as weak entities.
+* Some of the elements considered in the database design are:
+* Simple attributes
+* Composite attributes
+* Single-valued attributes
+* Multivalued attributes
+### Dependency:
+* A dependency is a constraint that applies to or defines the relationship between attributes.
+* There are three types of dependencies in a table:
+* Total or full dependency
+* Partial dependency
+* Transitive dependency
+### Database Design:
+* Database design is the organization of data according to a database model. 
+### Normal forms:
+* Normalization is a technique to re-duce redundancy. It is a decomposition process to split tables.
+* Types : 
+* First Normal Form (INF) : A table that is in INF may have redundant data.A table in 1NF does not show data consistency and integrity in the long run.
+* Second Normal Form (2NF) : All INF requirements are fulfilled. There is no partial dependency.
+* Third Normal Form (3NF) : All 2NF requirements are fulfilled. There is no transitive dependency.
+### Dependency Diagrams:
+* Dependency diagram is used to show total (Full, Partial and Transitive dependencies in a table).
+* Conversion from 1NF to 2NF
+* Conversion from 2NF to 3NF
+### Denormalization:
+* The normalization process splits tables into smaller tables.Denormalization is the reverse process.
+
 ## Database Queries
 
 Queries are requests made to the database management system for specific information.
