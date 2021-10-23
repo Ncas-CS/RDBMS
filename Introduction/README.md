@@ -11,6 +11,15 @@ A database is an organized collection of structured information, or data, typica
 * Easly accessible.
 * Efficient.
 
+## Relationship
+* The database design requires you to create entity sets, each describing a set of related entities.
+* The design also requires you to establish all the relationships between the entity sets within the database.
+* The different database management software packages handle the creation and use of relationships in different manners.
+* Depending on the type of interaction, the relationships are classified into three categories:
+* One-to-one relationship
+* One-to-many relationship
+* Many-to-many relationship
+
 ## Database Management Systems (DBMS)
 A special software program that helps users create and maintain a database.
 * Makes it easy to manage large amounts of information.
